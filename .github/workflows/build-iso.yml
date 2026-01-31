@@ -1,34 +1,40 @@
-  name: Build ISO
+name: Build ISO
 
-  on:
-    workflow_dispatch:
+on:
+  workflow_dispatch:
 
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      container:
-        image: archlinux:latest
-        options: --privileged
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+      options: --privileged
 
-      steps:
-        - name: Install dependencies
-          run: pacman -Syu --noconfirm git archiso
+    steps:
+      - name: Install dependencies
+        run: pacman -Syu --noconfirm git archiso
 
-        - name: Clone ISO builder
-          run: |
-            git clone https://github.com/omacom-io/omarchy-iso.git
-            cd omarchy-iso
-            git submodule update --init
+      - name: Clone ISO builder
+        run: |
+          git clone https://github.com/omacom-io/omarchy-iso.git /iso
+          cd /iso
+          git submodule update --init --recursive
 
-        - name: Build ISO
-          run: |
-            cd omarchy-iso
-            OMARCHY_INSTALLER_REPO="lockedloop/omarchy" OMARCHY_INSTALLER_REF="dev" ./bin/omarchy-iso-make
+      - name: Build ISO
+        working-directory: /iso
+        env:
+          OMARCHY_INSTALLER_REPO: lockedloop/omarchy
+          OMARCHY_INSTALLER_REF: dev
+          OMARCHY_MIRROR: stable
+          HOST_UID: 1000
+          HOST_GID: 1000
+        run: |
+          mkdir -p /out
+          /iso/builder/build-iso.sh
 
-        - name: Upload ISO
-          uses: actions/upload-artifact@v4
-          with:
-            name: omarchy-iso
-            path: omarchy-iso/release/*.iso
-
-
+      - name: Upload ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: omarchy-iso
+          path: /out/*.iso
+          retention-days: 7
