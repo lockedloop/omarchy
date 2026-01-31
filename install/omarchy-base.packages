@@ -1,7 +1,6 @@
 # Omarchy core package list installed via install/packaging/base.sh
 # This file is also used by the ISO builder when determining needs
 
-1password-beta
 1password-cli
 aether
 alacritty
@@ -14,14 +13,18 @@ bluetui
 bolt
 brightnessctl
 btop
+brave-bin
 chromium
 clang
+cliphist
+cmake
 cups
 cups-browsed
 cups-filters
 cups-pdf
 docker
 docker-buildx
+drawio-desktop
 docker-compose
 dotnet-runtime-9.0
 dust
@@ -39,11 +42,13 @@ fontconfig
 fzf
 ghostty
 github-cli
+git-lfs
 gnome-calculator
 gnome-keyring
 gnome-themes-extra
 grim
 gpu-screen-recorder
+gtkwave
 gum
 gvfs-mtp
 gvfs-nfs
@@ -62,6 +67,7 @@ inetutils
 inxi
 iwd
 jq
+just
 kdenlive
 kvantum-qt5
 lazydocker
@@ -77,6 +83,7 @@ luarocks
 mako
 man-db
 mariadb-libs
+meson
 mise
 mpv
 nautilus
@@ -87,6 +94,8 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 nss-mdns
+ninja
+nwg-displays
 nvim
 obs-studio
 obsidian
@@ -104,13 +113,16 @@ power-profiles-daemon
 python-gobject
 python-poetry-core
 python-terminaltexteffects
+qemu-full
 qt5-wayland
 ripgrep
 ruby
 rust
 satty
 sddm
+seahorse
 signal-desktop
+slack-desktop
 slurp
 spotify
 starship
@@ -118,12 +130,22 @@ sushi
 swaybg
 swayosd
 system-config-printer
+telegram-desktop
 tldr
+tmux
 tree-sitter-cli
 tobi-try
 ttf-cascadia-mono-nerd
+ttf-dejavu-nerd
+ttf-firacode-nerd
+ttf-hack-nerd
 ttf-ia-writer
+ttf-inconsolata-nerd
 ttf-jetbrains-mono-nerd
+ttf-meslo-nerd
+ttf-roboto-mono-nerd
+ttf-sourcecodepro-nerd
+ttf-ubuntu-nerd
 typora
 tzupdate
 ufw
@@ -131,12 +153,17 @@ ufw-docker
 unzip
 usage
 uwsm
+verilator
+virt-manager
+visual-studio-code-bin
+vlc
 waybar
 wayfreeze
 whois
 wireless-regdb
 wiremix
 wireplumber
+wl-clip-persist
 wl-clipboard
 woff2-font-awesome
 xdg-desktop-portal-gtk
@@ -146,4 +173,6 @@ xmlstarlet
 xournalpp
 yaru-icon-theme
 yay
+yosys
 zoxide
+zsh

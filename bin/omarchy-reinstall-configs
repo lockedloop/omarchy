@@ -10,8 +10,7 @@ fi
 
 echo "Resetting all Omarchy configs"
 cp -R ~/.local/share/omarchy/config/* ~/.config/
-cp ~/.local/share/omarchy/default/bashrc ~/.bashrc
-echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' | tee ~/.bash_profile >/dev/null
+cp ~/.local/share/omarchy/default/zshrc ~/.zshrc
 
 $(bash $OMARCHY_PATH/install/config/theme.sh)
 

@@ -10,9 +10,20 @@ italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 size = 9
 
 [window]
-padding.x = 14
-padding.y = 14
+padding.x = 12
+padding.y = 12
 decorations = "None"
+opacity = 0.9
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
 
 [keyboard]
 bindings = [
